@@ -31,6 +31,8 @@ pipeline {
             sh 'docker login --username $REGISTRY_CREDENTIALS_USR --password $REGISTRY_CREDENTIALS_PSW $ACR_ID'
             sh 'docker push $ACR_ID/$CALCULATION_SERVICE_IMAGE:latest'
             sh 'docker logout'
+            
+            sh 'echo Completed ...'
           }
         }
 
